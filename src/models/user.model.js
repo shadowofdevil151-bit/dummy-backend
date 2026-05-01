@@ -36,7 +36,7 @@ const userSchema=new Schema({
         type:String,
         required:[true,"Password is requred."],
     },
-    refreshTokens:{
+    refreshToken:{
         type:String
     },
     watchHistory:[
