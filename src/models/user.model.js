@@ -29,8 +29,7 @@ const userSchema=new Schema({
     },
     coverImage:{
         type:String,
-        required:true,
-        trim:true
+        trim:true,
     },
     password:{
         type:String,
@@ -68,8 +67,8 @@ userSchema.methods.generateAccessToken=function(){
 userSchema.methods.generateRefreshToken=function(){
     return jwt.sign({
         _id:this._id
-    },process.env.ACCESS_REFRESH_SECRET,{
-        expiresIn:process.env.ACCESS_REFRESH_EXPIRY
+    },process.env.REFRESH_TOKEN_SECRET,{
+        expiresIn:process.env.REFRESH_TOKEN_EXPIRY
     })
 }
 
